@@ -25,7 +25,6 @@ class Game {
         
         if (key === currentSymbolText) {
           this.success();
-          this.moveToNextSymbol();
         } else {
           this.fail();
         }
