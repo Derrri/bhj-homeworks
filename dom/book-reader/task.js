@@ -14,10 +14,8 @@ function changeFontSize(event) {
 
     const size = event.currentTarget.getAttribute('data-size');
 
-    if (size === 'small') {
-        book.classList.add('book_fs-small');
-    } else if (size === 'big') {
-        book.classList.add('book_fs-big');
+    if (size) {
+        book.classList.add(`book_fs-${size}`);
     }
 }
 
