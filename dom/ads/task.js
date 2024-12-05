@@ -3,14 +3,12 @@ function startRotators() {
 
     rotators.forEach((rotator) => {
         const cases = rotator.querySelectorAll(".rotator__case");
-        let currentIndex = 0;
-
-        cases[currentIndex].classList.add("rotator__case_active");
+        let currentElement = rotator.querySelector(".rotator__case_active");
 
         setInterval(() => {
-            cases[currentIndex].classList.remove("rotator__case_active");
-            currentIndex = (currentIndex + 1) % cases.length;
-            cases[currentIndex].classList.add("rotator__case_active");
+            currentElement.classList.remove("rotator__case_active");
+            currentElement = currentElement.nextElementSibling || rotator.firstElementChild;
+            currentElement.classList.add("rotator__case_active");
         }, 1000);
     });
 }
